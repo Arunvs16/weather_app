@@ -106,13 +106,13 @@ class _HomePageState extends State<HomePage> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Text(
-              "  ${DateFormat("d-m-y").format(now)}",
-              style: const TextStyle(
-                fontSize: 35,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            // Text(
+            //   "  ${DateFormat("d-m-yyyy").format(now)}",
+            //   style: const TextStyle(
+            //     fontSize: 35,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            // ),
           ],
         )
       ],

@@ -28,6 +28,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 217, 233, 255),
       body: _buildUI(),
     );
   }
@@ -73,7 +74,7 @@ class _HomePageState extends State<HomePage> {
       _weather?.areaName ?? '',
       style: const TextStyle(
         fontSize: 30,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.bold,
         fontStyle: FontStyle.italic,
       ),
     );
@@ -87,6 +88,7 @@ class _HomePageState extends State<HomePage> {
           DateFormat("h:mm a").format(now),
           style: const TextStyle(
             fontSize: 35,
+            fontWeight: FontWeight.bold,
           ),
         ),
         const SizedBox(
@@ -101,12 +103,14 @@ class _HomePageState extends State<HomePage> {
               DateFormat("EEEE").format(now),
               style: const TextStyle(
                 fontSize: 35,
+                fontWeight: FontWeight.bold,
               ),
             ),
             Text(
-              "  ${DateFormat("d.m.y").format(now)}",
+              "  ${DateFormat("d-m-y").format(now)}",
               style: const TextStyle(
                 fontSize: 35,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ],
@@ -158,8 +162,14 @@ class _HomePageState extends State<HomePage> {
       height: MediaQuery.sizeOf(context).height * 0.15,
       width: MediaQuery.sizeOf(context).width * 0.80,
       decoration: BoxDecoration(
-        color: Colors.deepPurple,
+        color: Colors.blue.shade50,
         borderRadius: BorderRadius.circular(20),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black,
+            blurRadius: 5,
+          ),
+        ],
       ),
       padding: const EdgeInsets.all(8.0),
       child: Column(
@@ -174,16 +184,16 @@ class _HomePageState extends State<HomePage> {
               Text(
                 "Max: ${_weather?.tempMax?.celsius?.toStringAsFixed(0)}°C",
                 style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                ),
+                    color: Colors.black,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold),
               ),
               Text(
                 "Min: ${_weather?.tempMin?.celsius?.toStringAsFixed(0)}°C",
                 style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                ),
+                    color: Colors.black,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -195,16 +205,16 @@ class _HomePageState extends State<HomePage> {
               Text(
                 "Wind: ${_weather?.windSpeed?.toStringAsFixed(0)}m/s",
                 style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                ),
+                    color: Colors.black,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold),
               ),
               Text(
                 "Humidity: ${_weather?.humidity?.toStringAsFixed(0)}%",
                 style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                ),
+                    color: Colors.black,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold),
               ),
             ],
           ),
